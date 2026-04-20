@@ -100,6 +100,7 @@ pipeline {
             steps {
                 sh """
                 mkdir -p zap-reports
+                chmod -R 777 zap-reports
 
                 docker run --rm \
                 --network=host \
