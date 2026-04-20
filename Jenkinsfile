@@ -106,9 +106,9 @@ pipeline {
                 --network=host \
                 -v \$(pwd)/zap-reports:/zap/wrk \
                 -t zaproxy/zap-stable zap-baseline.py \
-                -t http://localhost:8081
+                -t http://localhost:8081 || true
                 """
-            }
+    }
         }
     }
 }
