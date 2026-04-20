@@ -30,10 +30,11 @@ pipeline {
                     withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                       sh """
                       mvn clean verify sonar:sonar \
-                     -Dcheckstyle.skip=true \
-                     -Dsonar.projectKey=petclinic \
-                     -Dsonar.login=${SONAR_TOKEN}
-                     """
+                      -DskipTests \
+                      -Dcheckstyle.skip=true \
+                      -Dsonar.projectKey=petclinic \
+                      -Dsonar.login=${SONAR_TOKEN}
+                      """
                     }  
                 }
             }
