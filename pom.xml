@@ -37,6 +37,13 @@
     <spring-format.version>0.0.47</spring-format.version>
   </properties>
 
+  <distributionManagement>
+  <repository>
+    <id>nexus</id>
+    <url>http://13.217.200.32:8082/repository/maven-snapshots/</url>
+  </repository>
+</distributionManagement>
+
   <dependencies>
     <!-- Spring and Spring Boot dependencies -->
     <dependency>
