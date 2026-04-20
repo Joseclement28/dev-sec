@@ -31,7 +31,6 @@ pipeline {
                       sh """
                       mvn clean verify sonar:sonar \
                       -Dsonar.projectKey=petclinic \
-                      -Dsonar.host.url=http://13.217.200.32:9000 \
                       -Dsonar.login=${SONAR_TOKEN}
                       """
                     }  
