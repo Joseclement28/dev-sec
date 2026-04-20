@@ -99,8 +99,9 @@ pipeline {
         stage('8. ZAP Scan') {
             steps {
                 sh """
+                rm -rf zap-reports
                 mkdir -p zap-reports
-                chmod -R 777 zap-reports
+                chmod 777 zap-reports
 
                 docker run --rm \
                 --network=host \
@@ -108,7 +109,7 @@ pipeline {
                 -t zaproxy/zap-stable zap-baseline.py \
                 -t http://localhost:8081 || true
                 """
-    }
+            }
         }
     }
 }
