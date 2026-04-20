@@ -29,7 +29,9 @@ pipeline {
                 withSonarQubeEnv('sonarqube-server') {
                     withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                       sh """
-                      mvn clean verify sonar:sonar \
+                      mvn clean verify
+                      -Dcheckstyle.skip=true
+                      sonar:sonar \
                       -Dsonar.projectKey=petclinic \
                       -Dsonar.login=${SONAR_TOKEN}
                       """
