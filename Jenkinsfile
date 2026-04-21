@@ -4,7 +4,6 @@ pipeline {
     tools {
         maven "M3"
         jdk 'jdk17'
-        maven 'M3'
     }
 
     environment {
